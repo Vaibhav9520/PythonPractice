@@ -1,0 +1,19 @@
+import random
+from datetime import datetime, timedelta
+
+# Define the range of birth years for ages 12 to 18 in 2023
+start_year = 2023 - 16
+end_year = 2023 - 12
+
+# Function to generate a random date of birth
+def random_date_of_birth(start_year, end_year):
+    year = random.randint(start_year, end_year)
+    month = random.randint(1, 12)
+    day = random.randint(1, 28)  # Assuming all months have 28 days for simplicity
+    return datetime(year, month, day).strftime("%Y-%m-%d")
+
+# Generate 30,000 random dates of birth
+birth_dates = [random_date_of_birth(start_year, end_year) for _ in range(30000)]
+
+# Print the first 10 dates of birth as an example
+print(birth_dates[:1000])
